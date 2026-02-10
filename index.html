@@ -11,10 +11,9 @@
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 
- <!-- Font Awesome Light (Outline) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome Light (Outline) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
   <!-- MINI SCREENING / BANNER -->
@@ -35,7 +34,6 @@
   <!-- PRODUCTS -->
   <section class="container" id="productos">
     <h2 class="section-title">Nuestros productos</h2>
-
     <div class="products">
 
       <!-- CAMISETA -->
@@ -104,7 +102,6 @@
   <!-- BENEFITS -->
   <section class="container">
     <h2 class="section-title">¿Por qué comprar aquí?</h2>
-
     <div class="benefits">
       <div class="benefit">
         <h4>🚚 Envíos rápidos</h4>
@@ -125,22 +122,22 @@
     </div>
   </section>
 
-<!-- CTA Redes Sociales Minimal -->
-<section class="cta-social">
-  <h2>¿Quieres una tienda como esta?</h2>
-  <p>Contáctanos por tus redes favoritas</p>
-  <div class="social-buttons">
-    <a href="https://wa.me/0000000000" target="_blank" class="btn-social whatsapp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="https://facebook.com/tuempresa" target="_blank" class="btn-social facebook">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://instagram.com/tuempresa" target="_blank" class="btn-social instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
-</section>
+  <!-- CTA Redes Sociales Minimal -->
+  <section class="cta-social">
+    <h2>¿Quieres una tienda como esta?</h2>
+    <p>Contáctanos por tus redes favoritas</p>
+    <div class="social-buttons">
+      <a href="https://wa.me/0000000000" target="_blank" class="btn-social whatsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://facebook.com/tuempresa" target="_blank" class="btn-social facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://instagram.com/tuempresa" target="_blank" class="btn-social instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
@@ -148,55 +145,33 @@
   </footer>
 
   <!-- MODAL DETALLE PRODUCTO -->
-<div class="product-modal" id="productModal">
-  <div class="modal-content">
-    <span class="close" onclick="closeDetail()">✕</span>
-    <img id="modalImg" src="" alt="Producto">
-    <h3 id="modalName">Nombre del producto</h3>
-    <p id="modalPrice">$0.00</p>
-    
-    <!-- NUEVA DESCRIPCIÓN -->
-    <p id="modalDesc" class="modal-desc">Descripción del producto...</p>
-    
-    <!-- OPCIONES (Talla y Color) -->
-    <div style="margin-bottom: 15px;">
-      <label for="modalSize">Talla:</label>
-      <select id="modalSize"></select>
-    </div>
+  <div class="product-modal" id="productModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDetail()">✕</span>
+      <img id="modalImg" src="" alt="Producto">
+      <h3 id="modalName">Nombre del producto</h3>
+      <p id="modalPrice">$0.00</p>
+      <p id="modalDesc" class="modal-desc">Descripción del producto...</p>
 
-    <div style="margin-bottom: 15px;">
-      <label for="modalColor">Color:</label>
-      <select id="modalColor"></select>
-    </div>
+      <!-- Opciones -->
+      <div>
+        <label for="modalSize">Talla:</label>
+        <select id="modalSize"></select>
+      </div>
+      <div>
+        <label for="modalColor">Color:</label>
+        <select id="modalColor"></select>
+      </div>
 
-    <!-- Cantidad -->
-    <div style="margin-bottom: 20px;">
-      <label>Cantidad:</label>
-      <input type="number" id="modalQty" value="1" min="1">
-    </div>
+      <!-- Cantidad -->
+      <div>
+        <label>Cantidad:</label>
+        <input type="number" id="modalQty" value="1" min="1">
+      </div>
 
-    <button onclick="addToCart()">Agregar al carrito</button>
+      <button onclick="addToCart()">Agregar al carrito</button>
+    </div>
   </div>
-</div>
-
-    
-    <!-- NUEVA DESCRIPCIÓN -->
-    <p id="modalDesc" class="modal-desc">Descripción del producto...</p>
-    
-    <!-- OPCIONES (Ej: talla) -->
-    <label for="modalOption">Talla / Color:</label>
-    <select id="modalOption">
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XL">XL</option>
-    </select>
-
-    <label>Cantidad:</label>
-    <input type="number" id="modalQty" value="1" min="1">
-    <button onclick="addToCart()">Agregar al carrito</button>
-  </div>
-</div>
 
   <!-- CARRITO LATERAL -->
   <div class="cart-sidebar" id="cartSidebar">
@@ -208,71 +183,6 @@
   </div>
 
   <!-- SCRIPT -->
-  <script>
-    // Banner
-    function closeBanner() {
-      document.getElementById('demoBanner').style.display = 'none';
-    }
-
-    // Productos
-    const products = [
-      {name:"Camiseta Oversize", price:29, img:"https://images.unsplash.com/photo-1523381294911-8d3cead13475"},
-      {name:"Sudadera Premium", price:49, img:"img/sudadera_premium.png"},
-      {name:"Jeans Slim Fit", price:55, img:"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c"},
-      {name:"Zapatillas Urbanas", price:89, img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff"},
-      {name:"Gorra Minimal", price:19, img:"img/Gorra.png"},
-      {name:"Mochilas Elegantes", price:65, img:"img/mochila.png"}
-    ];
-
-    let cart = [];
-    let currentProduct = null;
-
-    // Abrir modal detalle
-    function openDetail(index){
-      currentProduct = products[index];
-      document.getElementById('modalImg').src = currentProduct.img;
-      document.getElementById('modalName').innerText = currentProduct.name;
-      document.getElementById('modalPrice').innerText = "$" + currentProduct.price;
-      document.getElementById('modalQty').value = 1;
-      document.getElementById('productModal').classList.add('show');
-    }
-
-    function closeDetail(){
-      document.getElementById('productModal').classList.remove('show');
-    }
-
-    // Agregar al carrito
-    function addToCart(){
-      const qty = parseInt(document.getElementById('modalQty').value);
-      const item = {...currentProduct, qty};
-      cart.push(item);
-      updateCart();
-      closeDetail();
-      openCart();
-    }
-
-    function updateCart(){
-      const cartItems = document.getElementById('cartItems');
-      cartItems.innerHTML = '';
-      let total = 0;
-      cart.forEach((item, index)=>{
-        total += item.price * item.qty;
-        cartItems.innerHTML += `<div>${item.name} x ${item.qty} - $${item.price*item.qty}</div>`;
-      });
-      document.getElementById('cartTotal').innerText = total;
-    }
-
-    // Carrito
-    function openCart(){
-      document.getElementById('cartSidebar').style.right = '0';
-    }
-    function closeCart(){
-      document.getElementById('cartSidebar').style.right = '-300px';
-    }
-
-    function checkout(){
-      alert("En esta demo, se simula el pago. Puedes redirigir a WhatsApp o PayPal aquí.");
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
