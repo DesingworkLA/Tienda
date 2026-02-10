@@ -56,11 +56,19 @@ HERO
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.2s;
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.4s;
 }
 
 .hero .btn {
@@ -70,11 +78,17 @@ HERO
   padding: 12px 25px;
   border-radius: 25px;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+  animation-delay: 0.6s;
 }
 
 .hero .btn:hover {
+  transform: translateY(-2px);
   background: #ff4b3a;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 /* =========================
@@ -103,13 +117,13 @@ PRODUCTS
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
 }
 
 .product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transform: scale(1.05);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.2);
 }
 
 .product img {
@@ -141,10 +155,12 @@ PRODUCTS
   color: #fff;
   padding: 8px 18px;
   border-radius: 20px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .product-info a:hover, .product-info button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   background: #ff4b3a;
 }
 
@@ -200,10 +216,12 @@ CTA
   padding: 12px 25px;
   border-radius: 25px;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .cta .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   background: #f5f5f5;
 }
 
@@ -227,9 +245,16 @@ MODAL DETALLE PRODUCTO
   height: 100%;
   background: rgba(0,0,0,0.5);
   display: none;
+  opacity: 0;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.product-modal.show {
+  display: flex;
+  opacity: 1;
 }
 
 .modal-content {
@@ -240,6 +265,12 @@ MODAL DETALLE PRODUCTO
   max-width: 500px;
   text-align: center;
   position: relative;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.product-modal.show .modal-content {
+  transform: scale(1);
 }
 
 .modal-content img {
@@ -277,10 +308,12 @@ MODAL DETALLE PRODUCTO
   border-radius: 25px;
   font-weight: 500;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .modal-content button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   background: #ff4b3a;
 }
 
@@ -299,16 +332,20 @@ CARRITO LATERAL
 .cart-sidebar {
   position: fixed;
   top: 0;
-  right: -300px;
+  right: -320px;
   width: 300px;
   height: 100%;
   background: #fff;
   box-shadow: -5px 0 20px rgba(0,0,0,0.1);
   padding: 20px;
-  transition: 0.4s;
+  transition: right 0.4s ease, box-shadow 0.4s ease;
   z-index: 9999;
   display: flex;
   flex-direction: column;
+}
+
+.cart-sidebar.open {
+  right: 0;
 }
 
 .cart-sidebar h3 {
@@ -333,10 +370,12 @@ CARRITO LATERAL
   padding: 10px;
   border-radius: 25px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .cart-sidebar button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   background: #ff4b3a;
 }
 
@@ -366,5 +405,15 @@ RESPONSIVE
   }
   .hero p {
     font-size: 1rem;
+  }
+}
+
+/* =========================
+KEYFRAMES
+========================= */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
