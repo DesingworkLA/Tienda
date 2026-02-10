@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda Demo | Tu tienda online</title>
+  <title>Demo Store | Tienda Online</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,96 +14,126 @@
 
 <body>
 
+  <!-- MINI SCREENING / BANNER -->
+  <div class="demo-banner" id="demoBanner">
+    <span>Esta es una tienda de demostración</span>
+    <button onclick="closeBanner()">✕</button>
+  </div>
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Tu tienda online, simple y elegante</h1>
-      <p>
-        Esta es una tienda de demostración para que visualices cómo se vería la web de tu negocio.
-        Diseño limpio, rápido y adaptable a cualquier marca.
-      </p>
-      <a href="https://wa.me/0000000000" class="btn">Quiero una igual</a>
+      <h1>Demo Store</h1>
+      <p>Moda y accesorios seleccionados para tu estilo diario</p>
+      <a href="#productos" class="btn">Ver productos</a>
     </div>
   </section>
 
   <!-- PRODUCTS -->
-  <section class="container">
-    <h2 class="section-title">Productos destacados</h2>
+  <section class="container" id="productos">
+    <h2 class="section-title">Nuestros productos</h2>
 
     <div class="products">
+
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Producto demo">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475" alt="">
         <div class="product-info">
-          <h3>Producto Demo</h3>
-          <span>$25.00</span>
-          <a href="#">Pedir por WhatsApp</a>
+          <h3>Camiseta Oversize</h3>
+          <span>$29.00</span>
+          <a href="https://wa.me/0000000000">Comprar</a>
         </div>
       </div>
 
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Producto demo">
+        <img src="https://images.unsplash.com/photo-1520975867597-0f1c6f6cdb96" alt="">
         <div class="product-info">
-          <h3>Producto Demo</h3>
-          <span>$30.00</span>
-          <a href="#">Pedir por WhatsApp</a>
+          <h3>Sudadera Premium</h3>
+          <span>$49.00</span>
+          <a href="https://wa.me/0000000000">Comprar</a>
         </div>
       </div>
 
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="Producto demo">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" alt="">
         <div class="product-info">
-          <h3>Producto Demo</h3>
-          <span>$40.00</span>
-          <a href="#">Pedir por WhatsApp</a>
+          <h3>Jeans Slim Fit</h3>
+          <span>$55.00</span>
+          <a href="https://wa.me/0000000000">Comprar</a>
         </div>
       </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="">
+        <div class="product-info">
+          <h3>Zapatillas Urbanas</h3>
+          <span>$89.00</span>
+          <a href="https://wa.me/0000000000">Comprar</a>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1618354691249-18772e8f9a59" alt="">
+        <div class="product-info">
+          <h3>Gorra Minimal</h3>
+          <span>$19.00</span>
+          <a href="https://wa.me/0000000000">Comprar</a>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6" alt="">
+        <div class="product-info">
+          <h3>Mochila Urbana</h3>
+          <span>$65.00</span>
+          <a href="https://wa.me/0000000000">Comprar</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- BENEFITS -->
   <section class="container">
-    <h2 class="section-title">Ideal para tu negocio</h2>
+    <h2 class="section-title">¿Por qué comprar aquí?</h2>
 
     <div class="benefits">
       <div class="benefit">
-        <h4>📱 Responsive</h4>
-        <p>Perfecta en celular, tablet y computadora.</p>
+        <h4>🚚 Envíos rápidos</h4>
+        <p>A todo el país</p>
       </div>
       <div class="benefit">
-        <h4>⚡ Rápida</h4>
-        <p>Carga en segundos.</p>
+        <h4>💳 Pago seguro</h4>
+        <p>PayPal y transferencias</p>
       </div>
       <div class="benefit">
-        <h4>🛍️ Visual</h4>
-        <p>Diseño pensado para vender.</p>
+        <h4>⭐ Calidad garantizada</h4>
+        <p>Productos seleccionados</p>
       </div>
       <div class="benefit">
-        <h4>💳 Pagos online</h4>
-        <p>Compatible con PayPal.</p>
+        <h4>📞 Atención directa</h4>
+        <p>WhatsApp inmediato</p>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="container">
-    <h2 class="section-title">Sobre tu tienda</h2>
-    <p class="about">
-      Este espacio es ideal para contar la historia de tu negocio, tus valores y lo que te hace diferente.
-      Todo el contenido es personalizable.
-    </p>
-  </section>
-
   <!-- CTA -->
   <section class="cta">
-    <h2>¿Te gustaría una web así?</h2>
-    <p>La adaptamos a tu negocio en poco tiempo.</p>
-    <a href="https://paypal.me/tumarca" class="btn">Ver ejemplo de pago con PayPal</a>
+    <h2>¿Quieres una tienda como esta?</h2>
+    <p>La adaptamos a tu marca y productos</p>
+    <a href="https://paypal.me/tumarca" class="btn">Pagar con PayPal</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    © 2026 · Tienda Demo · Sitio web de demostración
+    © 2026 · Demo Store
   </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    function closeBanner() {
+      document.getElementById('demoBanner').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
