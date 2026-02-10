@@ -442,7 +442,7 @@ KEYFRAMES
   }
 }
 
-/* CTA Redes Sociales */
+/* CTA Redes Sociales Minimal */
 .cta-social {
   background: #ff6f61;
   color: #fff;
@@ -453,11 +453,13 @@ KEYFRAMES
 .cta-social h2 {
   font-size: 2rem;
   margin-bottom: 15px;
+  font-weight: 600;
 }
 
 .cta-social p {
   font-size: 1.1rem;
   margin-bottom: 25px;
+  opacity: 0.9;
 }
 
 .social-buttons {
@@ -471,21 +473,23 @@ KEYFRAMES
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
+  background: rgba(255,255,255,0.2);
   color: #fff;
   font-size: 1.5rem;
   transition: all 0.3s ease;
 }
 
-.btn-social.whatsapp { background: #25D366; }
-.btn-social.facebook { background: #1877F2; }
+.btn-social.whatsapp { background: rgba(37,211,102,0.85); }
+.btn-social.facebook { background: rgba(24,119,242,0.85); }
 .btn-social.instagram { 
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: rgba(255,255,255,0.2); 
+  background: linear-gradient(45deg, #fdf497, #fd5949, #d6249f, #285AEB);
 }
 
 .btn-social:hover {
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
