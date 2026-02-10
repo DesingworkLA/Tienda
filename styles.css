@@ -118,7 +118,6 @@ PRODUCTS
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: pointer;
 }
 
 .product:hover {
@@ -147,21 +146,46 @@ PRODUCTS
   color: #ff6f61;
 }
 
-.product-info a, .product-info button {
+/* =========================
+BOTÓN VER PRODUCTO AESTHETIC
+========================= */
+.product-info button {
   display: inline-block;
   margin-top: 10px;
-  text-decoration: none;
-  background: #ff6f61;
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 0.95rem;
   color: #fff;
-  padding: 8px 18px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ff6f61, #ff9a76);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 15px rgba(255,111,97,0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-.product-info a:hover, .product-info button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  background: #ff4b3a;
+.product-info button::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 0;
+  left: -10%;
+  top: 0;
+  background: rgba(255,255,255,0.25);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+.product-info button:hover::after {
+  height: 300%;
+}
+
+.product-info button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255,111,97,0.4);
+  background: linear-gradient(135deg, #ff4b3a, #ff7a5e);
 }
 
 /* =========================
