@@ -148,17 +148,30 @@
   </footer>
 
   <!-- MODAL DETALLE PRODUCTO -->
-  <div class="product-modal" id="productModal">
-    <div class="modal-content">
-      <span class="close" onclick="closeDetail()">✕</span>
-      <img id="modalImg" src="" alt="Producto">
-      <h3 id="modalName"></h3>
-      <p id="modalPrice"></p>
-      <label>Cantidad:</label>
-      <input type="number" id="modalQty" value="1" min="1">
-      <button onclick="addToCart()">Agregar al carrito</button>
-    </div>
+<div class="product-modal" id="productModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeDetail()">✕</span>
+    <img id="modalImg" src="" alt="Producto">
+    <h3 id="modalName">Nombre del producto</h3>
+    <p id="modalPrice">$0.00</p>
+    
+    <!-- NUEVA DESCRIPCIÓN -->
+    <p id="modalDesc" class="modal-desc">Descripción del producto...</p>
+    
+    <!-- OPCIONES (Ej: talla) -->
+    <label for="modalOption">Talla / Color:</label>
+    <select id="modalOption">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+
+    <label>Cantidad:</label>
+    <input type="number" id="modalQty" value="1" min="1">
+    <button onclick="addToCart()">Agregar al carrito</button>
   </div>
+</div>
 
   <!-- CARRITO LATERAL -->
   <div class="cart-sidebar" id="cartSidebar">
