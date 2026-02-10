@@ -158,6 +158,31 @@
     <!-- NUEVA DESCRIPCIÓN -->
     <p id="modalDesc" class="modal-desc">Descripción del producto...</p>
     
+    <!-- OPCIONES (Talla y Color) -->
+    <div style="margin-bottom: 15px;">
+      <label for="modalSize">Talla:</label>
+      <select id="modalSize"></select>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="modalColor">Color:</label>
+      <select id="modalColor"></select>
+    </div>
+
+    <!-- Cantidad -->
+    <div style="margin-bottom: 20px;">
+      <label>Cantidad:</label>
+      <input type="number" id="modalQty" value="1" min="1">
+    </div>
+
+    <button onclick="addToCart()">Agregar al carrito</button>
+  </div>
+</div>
+
+    
+    <!-- NUEVA DESCRIPCIÓN -->
+    <p id="modalDesc" class="modal-desc">Descripción del producto...</p>
+    
     <!-- OPCIONES (Ej: talla) -->
     <label for="modalOption">Talla / Color:</label>
     <select id="modalOption">
