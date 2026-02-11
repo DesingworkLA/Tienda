@@ -170,7 +170,7 @@ BENEFITS
 }
 
 /* =========================
-MODAL PRODUCTO - VERSIÓN FINAL AJUSTADA
+MODAL PRODUCTO - FIJO PARA PC
 ========================= */
 .product-modal {
   display: none;
@@ -180,9 +180,7 @@ MODAL PRODUCTO - VERSIÓN FINAL AJUSTADA
   backdrop-filter: blur(6px);
   justify-content: center;
   align-items: center;
-  padding: 20px;
   z-index: 10000;
-  overflow-y: auto;
 }
 
 .product-modal.show {
@@ -192,8 +190,8 @@ MODAL PRODUCTO - VERSIÓN FINAL AJUSTADA
 .modal-content {
   background: #fff;
   border-radius: 25px;
-  max-width: 800px;
-  width: 100%;
+  width: 700px;       /* tamaño fijo para PC */
+  max-width: 90%;
   display: flex;
   flex-direction: row;
   gap: 25px;
@@ -201,13 +199,12 @@ MODAL PRODUCTO - VERSIÓN FINAL AJUSTADA
   position: relative;
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
   animation: fadeInModal 0.3s ease;
-  flex-wrap: wrap; /* para pantallas pequeñas */
+  overflow: hidden;   /* nada se sale */
 }
 
 /* Imagen del producto */
 .modal-content img {
-  width: 100%;
-  max-width: 400px;
+  width: 50%;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
@@ -218,8 +215,9 @@ MODAL PRODUCTO - VERSIÓN FINAL AJUSTADA
 .modal-details {
   display: flex;
   flex-direction: column;
-  gap: 12px;  /* espacio entre elementos */
+  gap: 12px;
   flex: 1;
+  overflow: hidden;
 }
 
 .modal-details h3 {
@@ -227,7 +225,7 @@ MODAL PRODUCTO - VERSIÓN FINAL AJUSTADA
   font-weight: 700;       
   margin-bottom: 5px;
   line-height: 1.2;       
-  word-break: break-word; 
+  word-break: break-word;
 }
 
 .modal-details p.price {
@@ -259,7 +257,7 @@ MODAL PRODUCTO - VERSIÓN FINAL AJUSTADA
 .modal-details button {
   font-size: 1rem;
   padding: 14px;
-  margin-top: 5px;       
+  margin-top: 5px;
   background: linear-gradient(135deg, #ff6f61, #ff9a76);
   color: #fff;
   font-weight: 600;
@@ -276,14 +274,28 @@ MODAL PRODUCTO - VERSIÓN FINAL AJUSTADA
   transform: translateY(-2px);
 }
 
-/* Botón cerrar */
+/* Botón cerrar fijo */
 .modal-content .close {
   position: absolute;
   top: 18px;
-  right: 25px;
-  font-size: 1.5rem;
+  right: 18px;
+  font-size: 1.8rem;
+  font-weight: 700;
   cursor: pointer;
   color: #555;
+  background: #eee;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.modal-content .close:hover {
+  background: #ff6f61;
+  color: #fff;
 }
 
 /* Animación modal */
@@ -298,7 +310,7 @@ RESPONSIVE
 @media (max-width: 1024px) {
   .modal-content {
     flex-direction: column;
-    max-width: 90%;
+    width: 90%;
     padding: 25px;
     gap: 20px;
   }
@@ -308,45 +320,19 @@ RESPONSIVE
     max-height: 300px;
   }
 
-  .modal-details h3 {
-    font-size: 1.5rem;
-  }
-
-  .modal-details p.price {
-    font-size: 1.2rem;
-  }
-
-  .modal-details .modal-desc {
-    font-size: 0.95rem;
-  }
-
+  .modal-details h3 { font-size: 1.5rem; }
+  .modal-details p.price { font-size: 1.2rem; }
+  .modal-details .modal-desc { font-size: 0.95rem; }
   .modal-details select,
-  .modal-details input[type="number"] {
-    font-size: 0.95rem;
-  }
-
-  .modal-details button {
-    font-size: 0.95rem;
-    padding: 12px;
-  }
+  .modal-details input[type="number"] { font-size: 0.95rem; }
+  .modal-details button { font-size: 0.95rem; padding: 12px; }
 }
 
 @media (max-width: 480px) {
-  .modal-content img {
-    max-height: 220px;
-  }
-
-  .modal-details h3 {
-    font-size: 1.3rem;
-  }
-
-  .modal-details p.price {
-    font-size: 1.1rem;
-  }
-
-  .modal-details .modal-desc {
-    font-size: 0.9rem;
-  }
+  .modal-content img { max-height: 220px; }
+  .modal-details h3 { font-size: 1.3rem; }
+  .modal-details p.price { font-size: 1.1rem; }
+  .modal-details .modal-desc { font-size: 0.9rem; }
 }
 
 /* =========================
