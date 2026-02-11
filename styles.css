@@ -267,6 +267,59 @@ RESPONSIVE (SOLO MÓVIL)
 ANIMACIONES
 ========================= */
 
+/* =========================
+CTA REDES SOCIALES
+========================= */
+
+.cta-social {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.cta-social h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cta-social p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.btn-social {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-social:hover {
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Colores redes */
+.whatsapp { background: #25D366; }
+.facebook { background: #1877F2; }
+.instagram { 
+  background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
