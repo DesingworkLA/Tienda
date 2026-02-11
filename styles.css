@@ -126,7 +126,6 @@ PRODUCTS
 /* =========================
 MODAL ESTABLE DEFINITIVO
 ========================= */
-
 .product-modal {
   display: none;
   position: fixed;
@@ -223,7 +222,6 @@ MODAL ESTABLE DEFINITIVO
 /* =========================
 CARRITO LATERAL
 ========================= */
-
 .cart-sidebar {
   position: fixed;
   top: 0;
@@ -244,7 +242,6 @@ CARRITO LATERAL
 /* =========================
 RESPONSIVE (SOLO MÓVIL)
 ========================= */
-
 @media (max-width: 768px) {
 
   .modal-content {
@@ -270,7 +267,6 @@ ANIMACIONES
 /* =========================
 CTA REDES SOCIALES
 ========================= */
-
 .cta-social {
   text-align: center;
   padding: 80px 20px;
@@ -320,7 +316,9 @@ CTA REDES SOCIALES
   background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
 }
 
-/* ========================= BENEFITS CENTRADOS ========================= */
+/* =========================
+BENEFITS CENTRADOS
+========================= */
 .benefits {
   display: flex;
   flex-direction: column;
@@ -332,27 +330,33 @@ CTA REDES SOCIALES
 .benefit {
   background: #fff;
   text-align: center;
-  padding: 20px 25px;
+  padding: 25px 30px;
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  max-width: 320px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 360px;
 }
 
 .benefit p {
   color: #555;
   margin-top: 8px;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* ========================= FOOTER CENTRADO ========================= */
+/* =========================
+FOOTER CENTRADO
+========================= */
 footer {
   text-align: center;
-  padding: 25px 20px;
+  padding: 30px 20px;
   color: #555;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
 }
 
+/* =========================
+ANIMACIONES
+========================= */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
