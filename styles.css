@@ -1,4 +1,6 @@
-/* ========================= GENERAL ========================= */
+/* =========================
+GENERAL
+========================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +14,9 @@ body {
   line-height: 1.5;
 }
 
-/* ========================= BANNER DEMO ========================= */
+/* =========================
+BANNER DEMO
+========================= */
 .demo-banner {
   position: fixed;
   top: 20px;
@@ -36,22 +40,17 @@ body {
   cursor: pointer;
 }
 
-/* ========================= HERO ========================= */
+/* =========================
+HERO
+========================= */
 .hero {
   background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
   padding: 100px 20px;
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
+.hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; margin-bottom: 20px; }
 
 .hero .btn {
   background: #ff6f61;
@@ -68,7 +67,9 @@ body {
   transform: translateY(-2px);
 }
 
-/* ========================= PRODUCTS ========================= */
+/* =========================
+PRODUCTS
+========================= */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -122,7 +123,10 @@ body {
   cursor: pointer;
 }
 
-/* ========================= MODAL ========================= */
+/* =========================
+MODAL ESTABLE DEFINITIVO
+========================= */
+
 .product-modal {
   display: none;
   position: fixed;
@@ -216,7 +220,10 @@ body {
   cursor: pointer;
 }
 
-/* ========================= CARRITO ========================= */
+/* =========================
+CARRITO LATERAL
+========================= */
+
 .cart-sidebar {
   position: fixed;
   top: 0;
@@ -232,12 +239,14 @@ body {
   flex-direction: column;
 }
 
-.cart-sidebar.open {
-  right: 0;
-}
+.cart-sidebar.open { right: 0; }
 
-/* ========================= RESPONSIVE ========================= */
+/* =========================
+RESPONSIVE (SOLO MÓVIL)
+========================= */
+
 @media (max-width: 768px) {
+
   .modal-content {
     width: 95%;
     height: auto;
@@ -254,15 +263,18 @@ body {
   }
 }
 
-/* ========================= CTA REDES SOCIALES (ARREGLADO) ========================= */
+/* =========================
+ANIMACIONES
+========================= */
+
+/* =========================
+CTA REDES SOCIALES
+========================= */
+
 .cta-social {
   text-align: center;
-  padding: 100px 20px;
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 80px 20px;
+  background: #fff;
 }
 
 .cta-social h2 {
@@ -272,41 +284,43 @@ body {
 
 .cta-social p {
   font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 40px;
+  color: #555;
+  margin-bottom: 30px;
 }
 
 .social-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 25px;
 }
 
 .btn-social {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem;
-  text-decoration: none;
-  background: #111;
+  font-size: 1.6rem;
   color: #fff;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
 .btn-social:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* Hover colores suaves */
-.whatsapp:hover { background: #25D366; }
-.facebook:hover { background: #1877F2; }
-.instagram:hover {
+/* Colores redes */
+.whatsapp { background: #25D366; }
+.facebook { background: #1877F2; }
+.instagram { 
   background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
