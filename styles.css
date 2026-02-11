@@ -170,7 +170,7 @@ BENEFITS
 }
 
 /* =========================
-MODAL PRODUCTO
+MODAL PRODUCTO AJUSTADO
 ========================= */
 .product-modal {
   display: none;
@@ -192,11 +192,11 @@ MODAL PRODUCTO
 .modal-content {
   background: #fff;
   border-radius: 25px;
-  width: 100%;
-  max-width: 850px;
+  width: 90%;
+  max-width: 600px;  /* tamaño mediano */
   display: flex;
-  flex-direction: row;
-  gap: 25px;
+  flex-direction: column; /* todo dentro, no se desborda */
+  gap: 20px;
   padding: 25px;
   position: relative;
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
@@ -204,36 +204,33 @@ MODAL PRODUCTO
 }
 
 .modal-content img {
-  flex: 1 1 50%;
   width: 100%;
-  max-width: 400px;
-  height: auto;
-  object-fit: contain;
+  max-height: 320px;
+  object-fit: cover;
   border-radius: 20px;
 }
 
 .modal-details {
-  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
 .modal-details h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
 .modal-details p.price {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #ff6f61;
 }
 
 .modal-details .modal-desc {
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
   color: #555;
 }
 
@@ -266,13 +263,40 @@ MODAL PRODUCTO
   transform: translateY(-2px) scale(1.02);
 }
 
+/* Botón cerrar */
 .modal-content .close {
   position: absolute;
-  top: 18px;
-  right: 25px;
-  font-size: 1.5rem;
+  top: 15px;
+  right: 20px;
+  font-size: 1.4rem;
   cursor: pointer;
   color: #555;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .modal-content img {
+    max-height: 280px;
+  }
+
+  .modal-details h3 { font-size: 1.5rem; }
+  .modal-details p.price { font-size: 1.2rem; }
+  .modal-details .modal-desc { font-size: 0.95rem; }
+  .modal-details button { font-size: 0.95rem; padding: 12px; }
+}
+
+@media (max-width: 480px) {
+  .modal-content img { max-height: 220px; }
+  .modal-details h3 { font-size: 1.3rem; }
+  .modal-details p.price { font-size: 1.1rem; }
+  .modal-details .modal-desc { font-size: 0.9rem; }
 }
 
 /* =========================
