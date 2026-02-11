@@ -75,6 +75,7 @@ HERO
 .hero .btn:hover {
   background: #ff4b3a;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* =========================
@@ -137,12 +138,13 @@ PRODUCTS
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .product-info button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.03);
   background: linear-gradient(135deg, #ff4b3a, #ff7a5e);
+  box-shadow: 0 12px 25px rgba(255,111,97,0.4);
 }
 
 /* =========================
@@ -168,7 +170,7 @@ BENEFITS
 }
 
 /* =========================
-MODAL PRODUCTO - REDISEÑO COMPLETO
+MODAL PRODUCTO
 ========================= */
 .product-modal {
   display: none;
@@ -178,7 +180,7 @@ MODAL PRODUCTO - REDISEÑO COMPLETO
   backdrop-filter: blur(6px);
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 20px;
   z-index: 10000;
   overflow-y: auto;
 }
@@ -190,39 +192,37 @@ MODAL PRODUCTO - REDISEÑO COMPLETO
 .modal-content {
   background: #fff;
   border-radius: 25px;
-  max-width: 800px;
   width: 100%;
+  max-width: 850px;
   display: flex;
   flex-direction: row;
-  gap: 30px;
-  padding: 30px;
+  gap: 25px;
+  padding: 25px;
   position: relative;
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
   animation: fadeInModal 0.3s ease;
 }
 
-/* Imagen del producto */
 .modal-content img {
+  flex: 1 1 50%;
   width: 100%;
   max-width: 400px;
   height: auto;
+  object-fit: contain;
   border-radius: 20px;
-  object-fit: cover;
-  flex-shrink: 0;
 }
 
-/* Contenido del producto */
 .modal-details {
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  flex: 1;
 }
 
 .modal-details h3 {
   font-size: 1.8rem;
-  margin-bottom: 5px;
   font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .modal-details p.price {
@@ -232,10 +232,9 @@ MODAL PRODUCTO - REDISEÑO COMPLETO
 }
 
 .modal-details .modal-desc {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
   color: #555;
-  margin-bottom: 10px;
 }
 
 .modal-details select,
@@ -247,7 +246,6 @@ MODAL PRODUCTO - REDISEÑO COMPLETO
   width: 100%;
 }
 
-/* Botón agregar al carrito */
 .modal-details button {
   background: linear-gradient(135deg, #ff6f61, #ff9a76);
   color: #fff;
@@ -265,10 +263,9 @@ MODAL PRODUCTO - REDISEÑO COMPLETO
 .modal-details button:hover {
   background: linear-gradient(135deg, #ff4b3a, #ff7a5e);
   box-shadow: 0 12px 30px rgba(255,111,97,0.4);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
 }
 
-/* Botón cerrar */
 .modal-content .close {
   position: absolute;
   top: 18px;
@@ -276,69 +273,6 @@ MODAL PRODUCTO - REDISEÑO COMPLETO
   font-size: 1.5rem;
   cursor: pointer;
   color: #555;
-}
-
-/* Animación modal */
-@keyframes fadeInModal {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-/* =========================
-RESPONSIVE
-========================= */
-@media (max-width: 1024px) {
-  .modal-content {
-    flex-direction: column;
-    max-width: 90%;
-    padding: 25px;
-    gap: 20px;
-  }
-
-  .modal-content img {
-    width: 100%;
-    max-height: 300px;
-  }
-
-  .modal-details h3 {
-    font-size: 1.5rem;
-  }
-
-  .modal-details p.price {
-    font-size: 1.2rem;
-  }
-
-  .modal-details .modal-desc {
-    font-size: 0.95rem;
-  }
-
-  .modal-details select,
-  .modal-details input[type="number"] {
-    font-size: 0.95rem;
-  }
-
-  .modal-details button {
-    font-size: 0.95rem;
-    padding: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal-content img {
-    max-height: 220px;
-  }
-
-  .modal-details h3 {
-    font-size: 1.3rem;
-  }
-
-  .modal-details p.price {
-    font-size: 1.1rem;
-  }
-
-  .modal-details .modal-desc {
-    font-size: 0.9rem;
-  }
 }
 
 /* =========================
@@ -378,6 +312,11 @@ CARRITO LATERAL
   cursor: pointer;
 }
 
+.cart-sidebar button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
 .cart-sidebar .close {
   position: absolute;
   top: 20px;
@@ -397,12 +336,34 @@ footer {
 /* =========================
 RESPONSIVE
 ========================= */
-@media (max-width: 768px){
-  .products {
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+@media (max-width: 1024px) {
+  .modal-content {
+    flex-direction: column;
+    max-width: 90%;
+    padding: 20px;
+    gap: 20px;
   }
-  .hero h1 { font-size: 2rem; }
-  .hero p { font-size: 1rem; }
+
+  .modal-content img {
+    max-height: 320px;
+  }
+
+  .modal-details h3 { font-size: 1.5rem; }
+  .modal-details p.price { font-size: 1.3rem; }
+  .modal-details .modal-desc { font-size: 1rem; }
+  .modal-details select,
+  .modal-details input[type="number"] { font-size: 0.95rem; }
+  .modal-details button { font-size: 0.95rem; padding: 12px; }
+}
+
+@media (max-width: 480px) {
+  .modal-content img {
+    max-height: 240px;
+  }
+
+  .modal-details h3 { font-size: 1.3rem; }
+  .modal-details p.price { font-size: 1.1rem; }
+  .modal-details .modal-desc { font-size: 0.95rem; }
 }
 
 /* =========================
@@ -414,6 +375,6 @@ ANIMACIONES
 }
 
 @keyframes fadeInModal {
-  from { transform: scale(0.9); opacity: 0; }
+  from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
