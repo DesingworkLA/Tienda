@@ -167,115 +167,152 @@ BENEFITS
   color: #555;
 }
 
-/* ===== MODAL PRODUCTO ===== */
-.modal {
+/* =========================
+MODAL PRODUCTO
+========================= */
+.product-modal {
+  display: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.6);
-  display: none;
-  align-items: center;
+  backdrop-filter: blur(4px);
   justify-content: center;
-  padding: 20px;
-  z-index: 1000;
+  align-items: center;
+  padding: 15px;
+  z-index: 10000;
+  overflow-y: auto;
 }
 
-.modal.show {
+.product-modal.show {
   display: flex;
 }
 
 .modal-content {
-  background: white;
-  width: 100%;
-  max-width: 900px;
+  background: #fff;
   border-radius: 20px;
+  width: 100%;
+  max-width: 650px;
   display: flex;
-  gap: 40px;
-  padding: 30px;
+  flex-direction: row;
+  gap: 25px;
+  padding: 25px;
   position: relative;
-  animation: fadeIn 0.3s ease;
+  animation: fadeInModal 0.3s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-/* Imagen */
+/* Imagen del producto */
 .modal-content img {
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
+  height: auto;
   border-radius: 15px;
   object-fit: cover;
 }
 
-/* Info */
-.modal-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* Contenido del producto */
+.modal-content h3 {
+  margin-bottom: 8px;
+  font-size: 1.4rem;
 }
 
-.modal-info h2 {
-  font-size: 26px;
-}
-
-.modal-info p {
-  font-size: 15px;
+.modal-content p {
+  margin-bottom: 12px;
   color: #555;
+  line-height: 1.5;
 }
 
-.modal-info select,
-.modal-info input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+.modal-desc {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
 }
 
-.modal-info button {
-  background: black;
-  color: white;
-  padding: 12px;
+/* Select e input */
+.modal-content select,
+.modal-content input[type="number"] {
+  padding: 8px 10px;
   border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+/* Botón agregar al carrito */
+.modal-content button {
+  background: linear-gradient(135deg, #ff6f61, #ff9a76);
+  box-shadow: 0 6px 15px rgba(255,111,97,0.3);
+  color: #fff;
+  border-radius: 25px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.2s;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
-.modal-info button:hover {
-  opacity: 0.8;
+.modal-content button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255,111,97,0.4);
+  background: linear-gradient(135deg, #ff4b3a, #ff7a5e);
 }
 
 /* Botón cerrar */
-.close-modal {
+.modal-content .close {
   position: absolute;
   top: 15px;
   right: 20px;
-  font-size: 22px;
+  font-size: 1.5rem;
   cursor: pointer;
+  color: #555;
 }
 
-/* Animación */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+/* Animación modal */
+@keyframes fadeInModal {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-/* ===== RESPONSIVE ===== */
-
+/* =========================
+RESPONSIVE
+========================= */
 @media (max-width: 768px) {
   .modal-content {
     flex-direction: column;
+    max-width: 100%;
     padding: 20px;
-    gap: 20px;
-    max-height: 90vh;
-    overflow-y: auto;
+    gap: 15px;
   }
 
   .modal-content img {
     max-width: 100%;
-    height: 250px;
+    height: 220px;
   }
 
-  .modal-info h2 {
-    font-size: 20px;
+  .modal-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .modal-content p,
+  .modal-desc {
+    font-size: 0.9rem;
+  }
+
+  .modal-content select,
+  .modal-content input[type="number"] {
+    font-size: 0.9rem;
+  }
+
+  .modal-content button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content img {
+    height: 180px;
   }
 }
 
