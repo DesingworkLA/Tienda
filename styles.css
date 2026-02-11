@@ -170,7 +170,7 @@ BENEFITS
 }
 
 /* =========================
-MODAL PRODUCTO - FIJO PARA PC
+MODAL PRODUCTO - PC OPTIMIZADO
 ========================= */
 .product-modal {
   display: none;
@@ -190,22 +190,23 @@ MODAL PRODUCTO - FIJO PARA PC
 .modal-content {
   background: #fff;
   border-radius: 25px;
-  width: 700px;       /* tamaño fijo para PC */
-  max-width: 90%;
+  width: 900px;        /* más grande para PC */
+  max-width: 95%;
+  height: 550px;       /* altura fija para que no haya scroll */
   display: flex;
   flex-direction: row;
-  gap: 25px;
+  gap: 30px;
   padding: 30px;
   position: relative;
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
   animation: fadeInModal 0.3s ease;
-  overflow: hidden;   /* nada se sale */
+  overflow: hidden;    /* nada se sale de la ventana */
 }
 
 /* Imagen del producto */
 .modal-content img {
-  width: 50%;
-  height: auto;
+  width: 45%;
+  height: 100%;
   border-radius: 20px;
   object-fit: cover;
   flex-shrink: 0;
@@ -215,35 +216,35 @@ MODAL PRODUCTO - FIJO PARA PC
 .modal-details {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
   flex: 1;
-  overflow: hidden;
+  justify-content: space-between; /* distribución vertical */
 }
 
 .modal-details h3 {
-  font-size: 1.7rem;      
-  font-weight: 700;       
-  margin-bottom: 5px;
-  line-height: 1.2;       
+  font-size: 2rem;     
+  font-weight: 700;    
+  margin-bottom: 10px;
+  line-height: 1.2;
   word-break: break-word;
 }
 
 .modal-details p.price {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #ff6f61;
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 .modal-details .modal-desc {
-  font-size: 1rem;
-  line-height: 1.6;       
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: #555;
-  margin-bottom: 10px;
-  text-align: left;       
+  margin-bottom: 15px;
   overflow-wrap: break-word;
 }
 
+/* Select e input */
 .modal-details select,
 .modal-details input[type="number"] {
   font-size: 1rem;
@@ -251,9 +252,10 @@ MODAL PRODUCTO - FIJO PARA PC
   border-radius: 12px;
   border: 1px solid #ccc;
   width: 100%;
-  margin-bottom: 10px;   
+  margin-bottom: 10px;
 }
 
+/* Botón agregar al carrito */
 .modal-details button {
   font-size: 1rem;
   padding: 14px;
@@ -266,6 +268,7 @@ MODAL PRODUCTO - FIJO PARA PC
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(255,111,97,0.3);
+  width: 100%;
 }
 
 .modal-details button:hover {
@@ -305,12 +308,13 @@ MODAL PRODUCTO - FIJO PARA PC
 }
 
 /* =========================
-RESPONSIVE
+RESPONSIVE (Tablet y Móvil)
 ========================= */
 @media (max-width: 1024px) {
   .modal-content {
     flex-direction: column;
     width: 90%;
+    height: auto;   /* scroll automático si es necesario */
     padding: 25px;
     gap: 20px;
   }
