@@ -192,7 +192,7 @@ MODAL PRODUCTO - AJUSTE FINAL
   background: #fff;
   border-radius: 25px;
   max-width: 700px;  /* un poquito más pequeña que antes */
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column; /* layout vertical como móvil */
   gap: 20px;
