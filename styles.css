@@ -170,7 +170,7 @@ BENEFITS
 }
 
 /* =========================
-MODAL PRODUCTO - AJUSTE FINAL
+MODAL PRODUCTO - REDISEÑO COMPLETO
 ========================= */
 .product-modal {
   display: none;
@@ -180,27 +180,30 @@ MODAL PRODUCTO - AJUSTE FINAL
   backdrop-filter: blur(6px);
   justify-content: center;
   align-items: center;
+  padding: 15px;
   z-index: 10000;
-  overflow-y: auto;
 }
 
 .product-modal.show {
   display: flex;
 }
 
+/* Contenedor del modal */
 .modal-content {
   background: #fff;
   border-radius: 25px;
-  max-width: 700px;  /* un poquito más pequeña que antes */
-  width: 40%;
+  width: 80%;          /* Ocupa 80% del ancho de la pantalla */
+  max-width: 700px;    /* No crece demasiado */
+  min-width: 400px;    /* No muy pequeño */
+  max-height: 90vh;    /* No excede la altura de la pantalla */
   display: flex;
-  flex-direction: column; /* layout vertical como móvil */
-  gap: 20px;
-  padding: 25px; /* un poco menos que antes */
+  flex-direction: column; /* En PC, textos debajo de la imagen */
+  padding: 30px;
   position: relative;
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  overflow-y: auto;     /* Scroll interno solo si hace falta */
   animation: fadeInModal 0.3s ease;
-  overflow: hidden;
+  gap: 20px;
 }
 
 /* Imagen del producto */
@@ -208,8 +211,8 @@ MODAL PRODUCTO - AJUSTE FINAL
   width: 100%;
   height: auto;
   border-radius: 20px;
-  object-fit: contain;
-  margin-bottom: 20px;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 /* Contenido del producto */
@@ -219,46 +222,42 @@ MODAL PRODUCTO - AJUSTE FINAL
   gap: 15px;
 }
 
+/* Textos */
 .modal-details h3 {
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  line-height: 1.2;
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  font-weight: 600;
 }
 
 .modal-details p.price {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #ff6f61;
-  margin-bottom: 10px;
 }
 
 .modal-details .modal-desc {
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
-  margin-bottom: 15px;
-  overflow-wrap: break-word;
 }
 
 /* Select e input */
 .modal-details select,
 .modal-details input[type="number"] {
-  font-size: 1rem;
   padding: 12px 15px;
   border-radius: 12px;
   border: 1px solid #ccc;
+  font-size: 1rem;
   width: 100%;
-  margin-bottom: 15px;
 }
 
 /* Botón agregar al carrito */
 .modal-details button {
-  font-size: 1rem;
-  padding: 14px;
   background: linear-gradient(135deg, #ff6f61, #ff9a76);
   color: #fff;
   font-weight: 600;
+  font-size: 1rem;
+  padding: 14px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -276,26 +275,11 @@ MODAL PRODUCTO - AJUSTE FINAL
 /* Botón cerrar */
 .modal-content .close {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  font-size: 1.8rem;
-  font-weight: 700;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
   cursor: pointer;
   color: #555;
-  background: #eee;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-  z-index: 10001;
-}
-
-.modal-content .close:hover {
-  background: #ff6f61;
-  color: #fff;
 }
 
 /* Animación modal */
@@ -310,27 +294,54 @@ RESPONSIVE
 @media (max-width: 1024px) {
   .modal-content {
     width: 90%;
+    max-width: 90%;
     padding: 25px;
   }
 
-  .modal-content img {
-    width: 100%;
-    max-height: 300px;
+  .modal-details h3 {
+    font-size: 1.5rem;
   }
 
-  .modal-details h3 { font-size: 1.5rem; }
-  .modal-details p.price { font-size: 1.2rem; }
-  .modal-details .modal-desc { font-size: 0.95rem; }
+  .modal-details p.price {
+    font-size: 1.2rem;
+  }
+
+  .modal-details .modal-desc {
+    font-size: 0.95rem;
+  }
+
   .modal-details select,
-  .modal-details input[type="number"] { font-size: 0.95rem; }
-  .modal-details button { font-size: 0.95rem; padding: 12px; }
+  .modal-details input[type="number"] {
+    font-size: 0.95rem;
+  }
+
+  .modal-details button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
 }
 
 @media (max-width: 480px) {
-  .modal-content img { max-height: 220px; }
-  .modal-details h3 { font-size: 1.3rem; }
-  .modal-details p.price { font-size: 1.1rem; }
-  .modal-details .modal-desc { font-size: 0.9rem; }
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .modal-content img {
+    max-height: 220px;
+  }
+
+  .modal-details h3 {
+    font-size: 1.3rem;
+  }
+
+  .modal-details p.price {
+    font-size: 1.1rem;
+  }
+
+  .modal-details .modal-desc {
+    font-size: 0.9rem;
+  }
 }
 
 /* =========================
