@@ -126,6 +126,7 @@ PRODUCTS
 /* =========================
 MODAL ESTABLE DEFINITIVO
 ========================= */
+
 .product-modal {
   display: none;
   position: fixed;
@@ -222,6 +223,7 @@ MODAL ESTABLE DEFINITIVO
 /* =========================
 CARRITO LATERAL
 ========================= */
+
 .cart-sidebar {
   position: fixed;
   top: 0;
@@ -242,6 +244,7 @@ CARRITO LATERAL
 /* =========================
 RESPONSIVE (SOLO MÓVIL)
 ========================= */
+
 @media (max-width: 768px) {
 
   .modal-content {
@@ -263,6 +266,7 @@ RESPONSIVE (SOLO MÓVIL)
 /* =========================
 CTA REDES SOCIALES
 ========================= */
+
 .cta-social {
   text-align: center;
   padding: 80px 20px;
@@ -322,7 +326,9 @@ BENEFITS HORIZONTALES
   align-items: flex-start;
   gap: 25px;
   margin-top: 40px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 10px;
 }
 
 .benefit {
@@ -331,8 +337,8 @@ BENEFITS HORIZONTALES
   padding: 25px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  max-width: 200px;
-  flex: 1;
+  min-width: 200px;
+  flex: 0 0 auto;
 }
 
 .benefit p {
