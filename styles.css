@@ -170,7 +170,7 @@ BENEFITS
 }
 
 /* =========================
-MODAL PRODUCTO - PC OPTIMIZADO (Textos verticales)
+MODAL PRODUCTO - PC OPTIMIZADO Y ESPACIOSO
 ========================= */
 .product-modal {
   display: none;
@@ -190,33 +190,33 @@ MODAL PRODUCTO - PC OPTIMIZADO (Textos verticales)
 .modal-content {
   background: #fff;
   border-radius: 25px;
-  width: 900px;         /* ancho grande en PC */
+  width: 1000px;         /* ancho grande */
   max-width: 95%;
-  height: 550px;        /* altura fija */
+  height: 600px;         /* altura mayor */
   display: flex;
-  flex-direction: column; /* vertical para PC */
-  gap: 20px;
-  padding: 30px;
+  flex-direction: column; /* vertical */
+  gap: 25px;
+  padding: 40px;
   position: relative;
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
   animation: fadeInModal 0.3s ease;
-  overflow: hidden;     /* nada se sale */
+  overflow: hidden;      /* nada se sale */
 }
 
 /* Imagen del producto */
 .modal-content img {
   width: 100%;
-  height: 300px;
+  height: 320px;
   border-radius: 20px;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 /* Contenido del producto */
 .modal-details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   flex: 1;
 }
 
@@ -229,17 +229,17 @@ MODAL PRODUCTO - PC OPTIMIZADO (Textos verticales)
 }
 
 .modal-details p.price {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #ff6f61;
   margin-bottom: 10px;
 }
 
 .modal-details .modal-desc {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.6;
   color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   overflow-wrap: break-word;
 }
 
@@ -251,13 +251,13 @@ MODAL PRODUCTO - PC OPTIMIZADO (Textos verticales)
   border-radius: 12px;
   border: 1px solid #ccc;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 /* Botón agregar al carrito */
 .modal-details button {
-  font-size: 1rem;
-  padding: 14px;
+  font-size: 1.05rem;
+  padding: 16px;
   margin-top: 5px;
   background: linear-gradient(135deg, #ff6f61, #ff9a76);
   color: #fff;
@@ -286,13 +286,14 @@ MODAL PRODUCTO - PC OPTIMIZADO (Textos verticales)
   cursor: pointer;
   color: #555;
   background: #eee;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
+  z-index: 10001; /* encima del carrito */
 }
 
 .modal-content .close:hover {
@@ -311,7 +312,7 @@ RESPONSIVE
 ========================= */
 @media (max-width: 1024px) {
   .modal-content {
-    flex-direction: column; /* ya vertical en móvil */
+    flex-direction: column; /* móvil vertical */
     width: 90%;
     height: auto;
     padding: 25px;
