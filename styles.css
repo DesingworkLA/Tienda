@@ -261,10 +261,6 @@ RESPONSIVE (SOLO MÓVIL)
 }
 
 /* =========================
-ANIMACIONES
-========================= */
-
-/* =========================
 CTA REDES SOCIALES
 ========================= */
 .cta-social {
@@ -317,14 +313,16 @@ CTA REDES SOCIALES
 }
 
 /* =========================
-BENEFITS CENTRADOS
+BENEFITS HORIZONTALES
 ========================= */
 .benefits {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   gap: 25px;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .benefit {
@@ -333,7 +331,8 @@ BENEFITS CENTRADOS
   padding: 25px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  max-width: 360px;
+  max-width: 200px;
+  flex: 1;
 }
 
 .benefit p {
@@ -348,15 +347,12 @@ FOOTER CENTRADO
 ========================= */
 footer {
   text-align: center;
-  padding: 30px 20px;
+  padding: 25px 20px;
   color: #555;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
 }
 
-/* =========================
-ANIMACIONES
-========================= */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
