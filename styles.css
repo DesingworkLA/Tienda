@@ -170,7 +170,7 @@ BENEFITS
 }
 
 /* =========================
-MODAL PRODUCTO - LAYOUT IGUAL A MÓVIL PERO MÁS ESTÉTICO EN PC
+MODAL PRODUCTO - AJUSTE FINAL
 ========================= */
 .product-modal {
   display: none;
@@ -181,6 +181,7 @@ MODAL PRODUCTO - LAYOUT IGUAL A MÓVIL PERO MÁS ESTÉTICO EN PC
   justify-content: center;
   align-items: center;
   z-index: 10000;
+  overflow-y: auto;
 }
 
 .product-modal.show {
@@ -190,25 +191,25 @@ MODAL PRODUCTO - LAYOUT IGUAL A MÓVIL PERO MÁS ESTÉTICO EN PC
 .modal-content {
   background: #fff;
   border-radius: 25px;
-  width: 600px;          /* un poquito más pequeña */
-  max-width: 85%;
-  padding: 25px;          /* reduce un poco el padding */
+  max-width: 700px;  /* un poquito más pequeña que antes */
+  width: 95%;
   display: flex;
   flex-direction: column; /* layout vertical como móvil */
   gap: 20px;
+  padding: 25px; /* un poco menos que antes */
   position: relative;
   box-shadow: 0 20px 50px rgba(0,0,0,0.25);
   animation: fadeInModal 0.3s ease;
-  overflow: hidden;       /* nada se sale */
+  overflow: hidden;
 }
 
 /* Imagen del producto */
 .modal-content img {
   width: 100%;
-  height: auto;           
+  height: auto;
   border-radius: 20px;
-  object-fit: contain;    /* mostrar imagen completa */
-  margin-bottom: 20px;    /* espacio más equilibrado */
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
 /* Contenido del producto */
@@ -255,7 +256,6 @@ MODAL PRODUCTO - LAYOUT IGUAL A MÓVIL PERO MÁS ESTÉTICO EN PC
 .modal-details button {
   font-size: 1rem;
   padding: 14px;
-  margin-top: 5px;
   background: linear-gradient(135deg, #ff6f61, #ff9a76);
   color: #fff;
   font-weight: 600;
@@ -311,7 +311,6 @@ RESPONSIVE
   .modal-content {
     width: 90%;
     padding: 25px;
-    gap: 20px;
   }
 
   .modal-content img {
